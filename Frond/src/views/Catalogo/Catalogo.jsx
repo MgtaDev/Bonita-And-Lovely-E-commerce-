@@ -84,7 +84,7 @@ const Catalogo = () => {
   };
 
   const extractNumber = (string) => {
-    const match = string.match(/\d+/); 
+    const match = string?.match(/\d+/); 
     return match ? parseInt(match[0]) : 0; 
 }; 
   const Clientela = useSelector(state=>state.Allclients);
