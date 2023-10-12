@@ -69,7 +69,7 @@ server.post("/pagoCarrito", (req, res) => {
   let preference = {
     items: items,
     back_urls: {
-      success: "https://bonita-and-lovely-e-commerce.vercel.app/confirmedpayment",
+      success: "http://localhost:3000/confirmedpayment",
       failure: '',
       pending: "",
     },
