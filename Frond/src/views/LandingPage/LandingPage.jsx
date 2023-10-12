@@ -70,7 +70,7 @@ useEffect(
     <>
         <NavBar />
       <Container darkMode={isDarkMode}>
-        <div style={{ height: '500px', overflowX: 'scroll' }}>
+        <div style={{ height: '500px' }}>
           <CarouselMid />
         </div>
         
@@ -78,7 +78,7 @@ useEffect(
         <Products/>
       
 
-        <div style={{ height: '500px', overflowX: 'scroll' }}>
+        <div style={{ height: '500px' }}>
         <CarouselMid></CarouselMid>
         </div>
 

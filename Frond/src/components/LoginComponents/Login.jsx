@@ -43,18 +43,6 @@ const LoginButton = () => {
          <button onClick={handleLogin} className="purpleSet hover:purpleSet text-white font-bold py-2 px-4 rounded-full">
             <strong>Iniciar Sesión</strong>
           </button> 
-          
-          <button
-          onClick={handleLogin}
-          style={{
-            backgroundColor: '#ffffff',
-            color: '#6d016e',
-            border: '2px solid #6d016e' 
-          }}
-          className="text-black hover:border-purpleSet ml-3 font-bold py-2 px-4 rounded-full"
-        >
-          <strong>Registrarse</strong>
-          </button>
             </>
     
     )}

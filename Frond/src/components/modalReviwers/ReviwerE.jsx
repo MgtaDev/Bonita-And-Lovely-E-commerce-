@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import StarRatings from 'react-star-ratings';
 import axios from 'axios';
 import Swal from "sweetalert2";
+import { FaEdit } from "react-icons/fa";
 
-export default function EditReviewModal({ currentUserId, productId , initialRating, initialComentario }) {
+export default function EditReviewModal({ clienteId, productoId , initialRating, initialComentario }) {
     const [showModal, setShowModal] = useState(false);
     const [newRating, setNewRating] = useState(initialRating);
     const [newComentario, setNewComentario] = useState(initialComentario);
-
+    
     const onChangeRating = (rating) => {
         setNewRating(rating);
     }
@@ -18,7 +19,7 @@ export default function EditReviewModal({ currentUserId, productId , initialRati
 
     const handleSaveChanges = async () => {
         try {
-            const response = await axios.put(`http://localhost:3001/reviewr/${productId}/${currentUserId}`, {
+            const response = await axios.put(`/reviewr/${productoId}/${clienteId}`, {
                 rating: newRating,
                 comentario: newComentario
             });
@@ -26,6 +27,7 @@ export default function EditReviewModal({ currentUserId, productId , initialRati
             Swal.fire('Calificacion editada','Ha editado correctamente su calificacion a este producto','success')
             setShowModal(false);
         } catch (error) {
+            console.log(error);
             Swal.fire('Ha ocurrido un error editando tu reseña',`${error.message}`,'error')
         }
     }
@@ -33,10 +35,10 @@ export default function EditReviewModal({ currentUserId, productId , initialRati
     return (
         <>
         <button
-          className="bg-customColor text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          className="text-gray-500 py-1 px-3 rounded-full"
           onClick={() => setShowModal(true)}
         >
-          Editar reseña
+          <FaEdit/>
         </button>
         {showModal ? (
        <>

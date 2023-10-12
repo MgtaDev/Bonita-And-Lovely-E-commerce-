@@ -7,6 +7,7 @@ import axios  from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 import LastBuyedSlider from "../../components/Last Buyed/lastBuyedSlider";
 import { useSpring } from "react-spring";
+import { FaArrowRight } from "react-icons/fa";
 
 const Carrito = () => {
     const [show, setShow] = useState(false);
@@ -168,13 +169,13 @@ const Carrito = () => {
         }
     try {
 
-        const response = await axios.post("http://localhost:3001/pagoCarrito", productsToPay);
+        const response = await axios.post("https://bonita-and-lovely-e-commerce-production.up.railway.app/pagoCarrito", productsToPay);
         window.location.href = response.data.response.body.init_point;
         
         // Marcar el carrito como pagado
-        if(response){
-          axios.put(`http:localhost:3001/carrito/pagado/${NumUserId}`, { pagado: true });
-        }
+        // if(response){
+        //   axios.put(`http:localhost:3001/carrito/pagado/${NumUserId}`, { pagado: true });
+        // }
     
         
       } catch (error) {
@@ -185,7 +186,7 @@ const Carrito = () => {
 
     return (
         <>
-            <div className="grid grid-cols-3 gap-6 mx-10 mt-6">
+            <div className="grid grid-cols-3 gap-6 mx-10 my-60 mt-6">
 
                 <div className="col-span-2">
                     {cartApi.productos?.length || cartUnificado.length ? ( 
@@ -249,8 +250,14 @@ const Carrito = () => {
                             )}                                                                    
                         </div>
                     ) : (
-                        <div className="flex items-center justify-center mt-40 text-xl">
+                        <div className="flex flex-col items-center justify-center mt-40 text-xl">
                             <div className="font-medium text-gray-600">No hay artículos en su carrito</div>
+                            <NavLink to="/catalogo">
+                            <p style={{ color: 'rgb(109, 1, 110)' }} className="">
+                                Agregar articulos
+                            </p>
+                            
+                        </NavLink>
                         </div>
                     )}
                     {cartUnificado.length > 0  || cartApi.productos?.length ?(
@@ -283,25 +290,16 @@ const Carrito = () => {
                         onClick={() => {
                             handleProceedToPayment();                         
                         }}
-                        className="transition duration-300 rounded-md py-2 px-4 text-white font-medium w-full"
+                        className="transition duration-300 flex justify-between items-center rounded-md py-2 px-4 text-white font-medium w-full"
                         style={{ backgroundColor: 'rgb(109, 1, 110)' }}
                         >
                         Continuar compra
+                        <FaArrowRight/>
                     </button>
-                    </div>
-
-                    <div className="mt-6 flex justify-center">
-                        <NavLink to="/catalogo">
-                            <button  className="transition bg-gray-800 duration-300 rounded-md py-2 px-4 text-white font-medium w-full">
-                                Agregar articulos
-                            </button>
-                        </NavLink>
                     </div>
                 </div>
             </div>
-            <div className='flex flex-row gap-2 mt-10 m-10 rounded-lg p-10  justify-center items-center'>
-                <LastBuyedSlider/>
-            </div>
+            
         </>
     )
 

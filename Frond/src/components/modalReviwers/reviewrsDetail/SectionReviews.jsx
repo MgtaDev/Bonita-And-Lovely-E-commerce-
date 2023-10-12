@@ -17,7 +17,7 @@ const SectionReviews = () => {
 
   return (
     <section className="w-[90%] m-auto">
-      <h2 className="text-2xl capitalize pb-5">opiniones de nuestro producto</h2>
+      <h2 className="text-2xl capitalize text-center pb-5">Opiniones de nuestro producto</h2>
       <div className="grid grid-cols-2  items-center">
         <div className="flex justify-start gap-4">
           <h2 className="text-3xl  font-semibold">{highestRating}.0</h2>

@@ -8,7 +8,6 @@ import ofertas from '../../assets/img/Ofertas img.jpeg'
 
 const Carousel = () => {
   const settings = {
-    dots: true,
     infinite: true,
     speed: 1000,
     slidesToShow: 1,
@@ -18,26 +17,22 @@ const Carousel = () => {
     cssEase: 'linear',
     prevArrow: <ArrowIcon className="fa fa-chevron-left" />,
     nextArrow: <ArrowIcon className="fa fa-chevron-right" />,
-    appendDots: dots => (
-      <DotsContainer>
-        <ul > {dots} </ul>
-      </DotsContainer>
-    )
+  
   };
   
   return (
     <CarouselContainer>
       <CarouselWrapper {...settings}>
         <div>
-        <img src={ofertas} alt="ofertas" />
+        <img className='object-contain' src={ofertas} alt="ofertas" />
         </div>
 
         <div>
-        <img src={ofertas} alt="ofertas" />
+        <img className='object-contain' src={ofertas} alt="ofertas" />
         </div>
 
         <div>
-        <img src={ofertas} alt="ofertas" />
+        <img className='object-contain'  src={ofertas} alt="ofertas" />
         </div>
       </CarouselWrapper>
     </CarouselContainer>

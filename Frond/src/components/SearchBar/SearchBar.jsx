@@ -159,7 +159,7 @@ const SearchBar = ({ placeholder }) => {
                 onClick={ async () => {
                   await setInputText(option.name);
                   await navigate('/catalogo')
-                  dispatch(getProductByName(inputText));
+                  dispatch(getProductByName(option.name));
                   
                   setOptions([]);
                 }}

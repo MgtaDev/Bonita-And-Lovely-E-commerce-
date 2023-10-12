@@ -19,7 +19,7 @@
   list-style: none;
   font-size: 15px;
   margin-left: 0px;
-  margin-right: 195px;
+  margin-right: 150px;
   margin-top: -1rem;
 }
 
@@ -28,7 +28,7 @@
   font-size: 14.5px;
   text-decoration: none;
   margin-right: .6rem;
-  margin-left: 0;
+  margin-left: 1rem;
   padding-left: 0;
   display: flex;
   margin: 0 1rem;
@@ -44,7 +44,7 @@ color: #6d016e;
 
 
 .logo {
-  width: 220px;
+  width: 180px;
   margin-top: 12px; 
   height: auto; 
   justify-content: center;

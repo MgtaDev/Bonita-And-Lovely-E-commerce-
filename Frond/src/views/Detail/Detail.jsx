@@ -137,7 +137,8 @@ const Detail = () => {
     <>
       <button
         onClick={goBack}
-        className="bg-customColor absolute ml-20 text-white py-2 px-4 rounded-lg mb-6 mt-12"
+        style={{ backgroundColor: 'rgb(109, 1, 110)' }}
+        className="absolute ml-20 text-white py-2 px-4 rounded-lg mb-6 mt-12"
       >
         Volver
       </button>
@@ -165,7 +166,7 @@ const Detail = () => {
                   )
                   }
                 </span>
-                <h3 className="text-lg font-medium text-customColor mt-2">
+                <h3 style={{ color: 'rgb(109, 1, 110)' }} className="text-lg font-medium mt-2">
                   ${stateProducts.precio_venta}
                   <span className="ml-1 text-sm text-gray-500">c/u</span>
 
@@ -176,7 +177,8 @@ const Detail = () => {
                   <div className="flex items-center gap-2">
                     <button
                       type="button"
-                      className="rounded-full bg-customColor text-white font-bold text-xs py-1 px-2 hover:bg-customColor2"
+                      style={{ backgroundColor: 'rgb(109, 1, 110)' }}
+                      className="rounded-full text-white font-bold text-xs py-1 px-2 hover:bg-customColor2"
                       onClick={handleDecrement}
                     >
                       -
@@ -186,8 +188,9 @@ const Detail = () => {
                     </span>
                     <button
                       type="button"
-                      className="rounded-full bg-customColor text-white font-bold text-xs py-1 px-2 hover:bg-customColor2"
+                      className="rounded-full text-white font-bold text-xs py-1 px-2 hover:bg-customColor2"
                       onClick={handleIncrement}
+                      style={{ backgroundColor: 'rgb(109, 1, 110)' }}
                     >
                       +
                     </button>
@@ -196,7 +199,8 @@ const Detail = () => {
                 <div className="flex justify-center mt-6">
                   <button
                     onClick={addToCart}
-                    className="bg-customColor text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-customColor2 transition duration-300 ease-in-out"
+                    style={{ backgroundColor: 'rgb(109, 1, 110)' }}
+                    className="text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-customColor2 transition duration-300 ease-in-out"
                   >
                     <img
                       src={bagIcon}
@@ -204,11 +208,7 @@ const Detail = () => {
                       className="inline-block w-6 h-6 mr-2" />{" "}
                     Añadir al carrito
                   </button>
-                  <button onClick={() => { handleProceedToPayment() } }
-                    className="bg-customColor ml-10 text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-customColor3 transition duration-300 ease-in-out"
-                  >
-                    Comprar ahora
-                  </button>
+                
 
                 </div>
               </div>

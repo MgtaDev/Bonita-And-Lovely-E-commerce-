@@ -120,9 +120,9 @@ const Catalogfilters = ({products, pageNumber, searchResults}) => {
       :
       <>
         {!productosFiltrados.length ? (
-      <h2 className="font-bold text-2xl mb-5">Pagina {pageNumber === 0 ? '1' : pageNumber === 1 ? '2' : '3'} <br/> <br /> <span className="text-sm rounded-full shadow-lg border-2  px-4 py-2 border-gray-500 text-gray-500 ">{total} Resultados</span></h2>
+       <span className="text-sm rounded-full shadow-lg border-2  px-4 py-2 border-gray-500 text-gray-500 ">{total} Resultados</span>
       )
-      : <h2 className="font-bold text-2xl mb-5">Pagina {pageNumber === 0 ? '1' : pageNumber === 1 ? '2' : '3'} <br/> <br /> <span className="text-sm text-gray-500 rounded-full shadow-lg border-2  px-4 py-2 border-gray-500">{productosFiltrados.length} Resultados</span></h2>
+      :  <span className="text-sm text-gray-500 rounded-full shadow-lg border-2  px-4 py-2 border-gray-500">{productosFiltrados.length} Resultados</span>
         }
       </>
       }   
