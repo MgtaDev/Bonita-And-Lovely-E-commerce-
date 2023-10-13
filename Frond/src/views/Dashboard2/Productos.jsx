@@ -365,7 +365,7 @@ const ProductosTable = () => {
                 </div>
               ) : (
                 <>
-                  <span>Desactivado</span>
+                  <span>Oculto</span>
                   <BsXCircle className="mr-3 relative bottom-4" />
               </>
               )}</td>

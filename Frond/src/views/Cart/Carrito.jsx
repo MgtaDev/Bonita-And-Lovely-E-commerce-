@@ -170,6 +170,7 @@ const Carrito = () => {
     try {
 
         const response = await axios.post("https://bonita-and-lovely-e-commerce-production.up.railway.app/pagoCarrito", productsToPay);
+        // const response = await axios.post("http://localhost:3001/pagoCarrito", productsToPay);
         window.location.href = response.data.response.body.init_point;
         
         // Marcar el carrito como pagado

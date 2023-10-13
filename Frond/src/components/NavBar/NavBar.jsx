@@ -123,9 +123,6 @@ const navigateCarrito = () => {
 
           <div className={style.icons}>
           <button onClick={navigateCarrito} className={`relative ${style.btnb} rounded-full`}>
-          {cartApi.length || cartUnificado.length ?(
-          <div className="absolute bg-red-500 text-white top-0 right-0 w-4 h-4 rounded-full text-xs">{isAuthenticated ? cartApi.productos?.length === 0 ? '' : cartApi.productos?.length : cartUnificado?.length === 0 ? '' : cartUnificado?.length }</div>
-          ):''}
           <AiOutlineShoppingCart />
           </button>
             <button  onClick={navigateFavoritos} className={style.btnb}>

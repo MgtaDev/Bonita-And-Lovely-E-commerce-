@@ -13,18 +13,19 @@ const ProductCard = ({ product }) => {
 
 console.log(product)
   return (
-    <div className="p-4 my-4 bg-white rounded-md shadow-md">
+    <div className="p-4 my-4 bg-white rounded-md shadow-lg">
       <div className="flex flex-row items-center">
         <Link to={`/detail/${product.productoId}`}>
         <img src={product.imagenProducto} alt={product.productoName} className="h-24 w-24 object-cover border-2 border-indigo-200 rounded-md mr-4" />  
       </Link>
-        <div className="flex flex-row items-center justify-between w-full">
+        <div className="flex px-4 flex-row items-center justify-between w-full">
           <div className="flex flex-col">
           <h1 className="text-lg capitalize font-medium">{product.productoName}</h1>
-          <span className="ml-1 text-sm mt-2 text-gray-500">{product.cantidad} {product.cantidad === 1 ? 'Producto' : 'Productos'}</span>
+          <span className="ml-1 text-sm mt-2 text-gray-500">{product.cantidad} {product.cantidad === 1 ? 'x' : 'x'}</span>
+          <p className="text-sm font-medium">Fecha: {product.fechaCompra.split(',')[0]}</p>
+          
           </div>
           <br />
-          <p className="text-sm font-medium text-right">Fecha: {product.fechaCompra.split(',')[0]}</p>
         </div>
       </div>
       {/* <p className="mt-1 text-sm text-gray-600 font-medium">{product.description}</p> */}

@@ -48,7 +48,7 @@ const Catalogfilters = ({products, pageNumber, searchResults}) => {
       setFilterChanged(true);
     }, [minPrice, maxPrice]);
     
-    const total  = products?.length;
+    const total  = stateProducts.productos * stateProducts.paginas?.length;
     
     const handleMultipleOptionChange = (propertyName, optionId) => {
       setSelectedFilters((prevFilters) => {
@@ -112,7 +112,7 @@ const Catalogfilters = ({products, pageNumber, searchResults}) => {
 
 
     return (
-      <div className="grid grid-cols-1 w-4/5 mx-auto bg-white text-black py-10 text-lg capitalize justify-items-start rounded-md">
+      <div className="grid grid-cols-1 w-4/5 mx-auto  text-black py-10 text-lg capitalize justify-items-start rounded-md">
         
         {searchResults.length ? (
        <span className="text-sm text-gray-500 rounded-full shadow-lg border-2  px-4 py-2 border-gray-500">{searchResults.length} Resultados</span>
@@ -120,7 +120,7 @@ const Catalogfilters = ({products, pageNumber, searchResults}) => {
       :
       <>
         {!productosFiltrados.length ? (
-       <span className="text-sm rounded-full shadow-lg border-2  px-4 py-2 border-gray-500 text-gray-500 ">{total} Resultados</span>
+       <span className="text-sm rounded-full shadow-lg border-2  px-4 py-2 border-gray-500 text-gray-500 ">60 Resultados</span>
       )
       :  <span className="text-sm text-gray-500 rounded-full shadow-lg border-2  px-4 py-2 border-gray-500">{productosFiltrados.length} Resultados</span>
         }

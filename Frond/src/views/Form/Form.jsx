@@ -195,371 +195,374 @@ const Form = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen flex justify-center items-center">
-      <form
-        onSubmit={formik.handleSubmit}
-        className="bg-white w-full md:w-4/5 lg:w-3/5 font-medium rounded-md shadow-md px-10 pt-8 pb-6 flex"
-      >
-        <div className="flex-1 pr-10">
-          <h1 className="text-3xl text-gray-800 mb-4 ">
-            Crear Producto
-          </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+    // <div className="bg-gray-100 min-h-screen flex justify-center items-center">
+    //   <form
+    //     onSubmit={formik.handleSubmit}
+    //     className="bg-white w-full md:w-4/5 lg:w-3/5 font-medium rounded-md shadow-md px-10 pt-8 pb-6 flex"
+    //   >
+    //     <div className="flex-1 pr-10">
+    //       <h1 className="text-3xl text-gray-800 mb-4 ">
+    //         Crear Producto
+    //       </h1>
+    //       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-            {/* Nombre del Producto */}
-            <div>
-              <label
-                htmlFor="productName"
-                className="font-medium text-gray-700 block mb-1"
-              >
-                Nombre del Producto
-              </label>
-              <input
-                type="text"
-                className={`border rounded-md p-11 w-full focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300 ${
-                  formik.touched.name && formik.errors.name
-                    ? "border-red-500"
-                    : ""
-                }`}
-                id="productName"
-                name="name"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.name}
-                required
-              />
-              {formik.touched.name && formik.errors.name && (
-                <div className="text-red-500 text-sm mt-1 font-medium">
-                  {formik.errors.name}
-                </div>
-              )}
-            </div>
+    //         {/* Nombre del Producto */}
+    //         <div>
+    //           <label
+    //             htmlFor="productName"
+    //             className="font-medium text-gray-700 block mb-1"
+    //           >
+    //             Nombre del Producto
+    //           </label>
+    //           <input
+    //             type="text"
+    //             className={`border rounded-md p-11 w-full focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300 ${
+    //               formik.touched.name && formik.errors.name
+    //                 ? "border-red-500"
+    //                 : ""
+    //             }`}
+    //             id="productName"
+    //             name="name"
+    //             onChange={formik.handleChange}
+    //             onBlur={formik.handleBlur}
+    //             value={formik.values.name}
+    //             required
+    //           />
+    //           {formik.touched.name && formik.errors.name && (
+    //             <div className="text-red-500 text-sm mt-1 font-medium">
+    //               {formik.errors.name}
+    //             </div>
+    //           )}
+    //         </div>
 
-            {/* Descripción del Producto */}
-            <div>
-              <label
-                htmlFor="productDescription"
-                className="font-medium text-gray-700 block mb-1"
-              >
-                Descripción del Producto
-              </label>
-              <textarea
-                id="productDescription"
-                name="descripcion"
-                placeholder="Escriba una breve descripción del producto"
-                rows="4"
-                className={`border rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300 ${
-                  formik.touched.descripcion && formik.errors.descripcion
-                    ? "border-red-500"
-                    : ""
-                }`}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.descripcion}
-                required
-              ></textarea>
-              {formik.touched.descripcion && formik.errors.descripcion && (
-                <div className="text-red-500 text-sm mt-1 font-medium">
-                  {formik.errors.descripcion}
-                </div>
-              )}
-            </div>
+    //         {/* Descripción del Producto */}
+    //         <div>
+    //           <label
+    //             htmlFor="productDescription"
+    //             className="font-medium text-gray-700 block mb-1"
+    //           >
+    //             Descripción del Producto
+    //           </label>
+    //           <textarea
+    //             id="productDescription"
+    //             name="descripcion"
+    //             placeholder="Escriba una breve descripción del producto"
+    //             rows="4"
+    //             className={`border rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300 ${
+    //               formik.touched.descripcion && formik.errors.descripcion
+    //                 ? "border-red-500"
+    //                 : ""
+    //             }`}
+    //             onChange={formik.handleChange}
+    //             onBlur={formik.handleBlur}
+    //             value={formik.values.descripcion}
+    //             required
+    //           ></textarea>
+    //           {formik.touched.descripcion && formik.errors.descripcion && (
+    //             <div className="text-red-500 text-sm mt-1 font-medium">
+    //               {formik.errors.descripcion}
+    //             </div>
+    //           )}
+    //         </div>
 
-            {/* Precio de Compra */}
-            <div>
-              <label
-                htmlFor="productPrice"
-                className="font-medium text-gray-700 block mb-1"
-              >
-                Precio de Compra
-              </label>
-              <div className="flex items-center">
-                <span className="mr-2">$</span>
-                <input
-                  type="text"
-                  className={`border rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300 ${
-                    formik.touched.precio_compra &&
-                    formik.errors.precio_compra
-                      ? "border-red-500"
-                      : ""
-                  }`}
-                  id="productPrice"
-                  name="precio_compra"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.precio_compra}
-                  required
-                  inputMode="numeric"
-                />
-              </div>
-              {formik.touched.precio_compra && formik.errors.precio_compra && (
-                <div className="text-red-500 text-sm mt-1 font-medium">
-                  {formik.errors.precio_compra}
-                </div>
-              )}
-            </div>
-
-
-            {/* Precio de Venta */}
-            <div>
-              <label
-                htmlFor="salePrice"
-                className="font-medium text-gray-700 block mb-1"
-              >
-                Precio de Venta
-              </label>
-              <div className="flex items-center">
-                <span className="mr-2">$</span>
-                <input
-                  type="text"
-                  className={`border rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300 ${
-                    formik.touched.precio_venta && formik.errors.precio_venta
-                      ? "border-red-500"
-                      : ""
-                  }`}
-                  id="salePrice"
-                  name="precio_venta"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.precio_venta}
-                  required
-                />
-              </div>
-              {formik.touched.precio_venta && formik.errors.precio_venta && (
-                <div className="text-red-500 text-sm mt-1 font-medium">
-                  {formik.errors.precio_venta}
-                </div>
-              )}
-            </div>
+    //         {/* Precio de Compra */}
+    //         <div>
+    //           <label
+    //             htmlFor="productPrice"
+    //             className="font-medium text-gray-700 block mb-1"
+    //           >
+    //             Precio de Compra
+    //           </label>
+    //           <div className="flex items-center">
+    //             <span className="mr-2">$</span>
+    //             <input
+    //               type="text"
+    //               className={`border rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300 ${
+    //                 formik.touched.precio_compra &&
+    //                 formik.errors.precio_compra
+    //                   ? "border-red-500"
+    //                   : ""
+    //               }`}
+    //               id="productPrice"
+    //               name="precio_compra"
+    //               onChange={formik.handleChange}
+    //               onBlur={formik.handleBlur}
+    //               value={formik.values.precio_compra}
+    //               required
+    //               inputMode="numeric"
+    //             />
+    //           </div>
+    //           {formik.touched.precio_compra && formik.errors.precio_compra && (
+    //             <div className="text-red-500 text-sm mt-1 font-medium">
+    //               {formik.errors.precio_compra}
+    //             </div>
+    //           )}
+    //         </div>
 
 
-            {/* Marca */}
-            <div>
-              <label
-                htmlFor="productBrand"
-                className="font-medium text-gray-700 block mb-1"
-              >
-                Marca
-              </label>
-              <div className="relative">
-                <select
-                  id="productBrand"
-                  value={
-                    selectedBrand && selectedBrand.id ? selectedBrand.id : ""
-                  }
-                  onChange={handleSelectChangeBrands}
-                  name="marcaId"
-                  className={`appearance-none w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300 ${
-                    formik.touched.marcaId && formik.errors.marcaId
-                      ? "border-red-500"
-                      : ""
-                  }`}
-                  required
-                >
-                  <option value="">Seleccionar</option>
-                  {brandsOptions.map((option) => (
-                    <option key={option.id} value={option.id}>
-                      {option.name}
-                    </option>
-                  ))}
-                </select>
-                <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                  <svg
-                    className="h-4 w-4 text-gray-500"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
-              </div>
-              {formik.touched.marcaId && formik.errors.marcaId && (
-                <div className="text-red-500 text-sm mt-1 font-medium">
-                  {formik.errors.marcaId}
-                </div>
-              )}
-            </div>
+    //         {/* Precio de Venta */}
+    //         <div>
+    //           <label
+    //             htmlFor="salePrice"
+    //             className="font-medium text-gray-700 block mb-1"
+    //           >
+    //             Precio de Venta
+    //           </label>
+    //           <div className="flex items-center">
+    //             <span className="mr-2">$</span>
+    //             <input
+    //               type="text"
+    //               className={`border rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300 ${
+    //                 formik.touched.precio_venta && formik.errors.precio_venta
+    //                   ? "border-red-500"
+    //                   : ""
+    //               }`}
+    //               id="salePrice"
+    //               name="precio_venta"
+    //               onChange={formik.handleChange}
+    //               onBlur={formik.handleBlur}
+    //               value={formik.values.precio_venta}
+    //               required
+    //             />
+    //           </div>
+    //           {formik.touched.precio_venta && formik.errors.precio_venta && (
+    //             <div className="text-red-500 text-sm mt-1 font-medium">
+    //               {formik.errors.precio_venta}
+    //             </div>
+    //           )}
+    //         </div>
 
 
-            {/* Categoría */}
-            <div>
-              <label
-                htmlFor="productCategory"
-                className="font-medium text-gray-700 block mb-1"
-              >
-                Categoría
-              </label>
-              <div className="relative">
-                <select
-                  id="productCategory"
-                  value={
-                    selectedCategories && selectedCategories.id
-                      ? selectedCategories.id
-                      : ""
-                  }
-                  onChange={handleSelectChangeCategories}
-                  name="categoriaId"
-                  className={`appearance-none w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300 ${
-                    formik.touched.categoriaId && formik.errors.categoriaId
-                      ? "border-red-500"
-                      : ""
-                  }`}
-                  required
-                >
-                  <option value="">Seleccionar</option>
-                  {categoriesOptions.map((option) => (
-                    <option key={option.id} value={option.id}>
-                      {option.name}
-                    </option>
-                  ))}
-                </select>
-                <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                  <svg
-                    className="h-4 w-4 text-gray-500"
-                    fill="none"
-                    stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                {formik.touched.categoriaId && formik.errors.categoriaId && (
-                  <div className="text-red-500 text-sm mt-1 font-medium">
-                    {formik.errors.categoriaId}
-                  </div>
-                )}
-            </div>
+    //         {/* Marca */}
+    //         <div>
+    //           <label
+    //             htmlFor="productBrand"
+    //             className="font-medium text-gray-700 block mb-1"
+    //           >
+    //             Marca
+    //           </label>
+    //           <div className="relative">
+    //             <select
+    //               id="productBrand"
+    //               value={
+    //                 selectedBrand && selectedBrand.id ? selectedBrand.id : ""
+    //               }
+    //               onChange={handleSelectChangeBrands}
+    //               name="marcaId"
+    //               className={`appearance-none w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300 ${
+    //                 formik.touched.marcaId && formik.errors.marcaId
+    //                   ? "border-red-500"
+    //                   : ""
+    //               }`}
+    //               required
+    //             >
+    //               <option value="">Seleccionar</option>
+    //               {brandsOptions.map((option) => (
+    //                 <option key={option.id} value={option.id}>
+    //                   {option.name}
+    //                 </option>
+    //               ))}
+    //             </select>
+    //             <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+    //               <svg
+    //                 className="h-4 w-4 text-gray-500"
+    //                 fill="none"
+    //                 stroke="currentColor"
+    //                 viewBox="0 0 24 24"
+    //                 xmlns="http://www.w3.org/2000/svg"
+    //               >
+    //                 <path
+    //                   strokeLinecap="round"
+    //                   strokeLinejoin="round"
+    //                   strokeWidth="2"
+    //                   d="M9 5l7 7-7 7"
+    //                 />
+    //               </svg>
+    //             </div>
+    //           </div>
+    //           {formik.touched.marcaId && formik.errors.marcaId && (
+    //             <div className="text-red-500 text-sm mt-1 font-medium">
+    //               {formik.errors.marcaId}
+    //             </div>
+    //           )}
+    //         </div>
 
-            {/* Tamaño */}
-            <div>
-                <label
-                  htmlFor="productSize"
-                  className="font-medium text-gray-700 block mb-1"
-                >
-                  Tamaño
-                </label>
-                <div className="relative">
-                  <select
-                    id="productSize"
-                    value={
-                      selectedSize && selectedSize.id ? selectedSize.id : ""
-                    }
-                    onChange={handleSelectChangeSize}
-                    name="tamañoId"
-                    className={`appearance-none w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300 ${
-                      formik.touched.tamañoId && formik.errors.tamañoId
-                        ? "border-red-500"
-                        : ""
-                    }`}
-                    required
-                  >
-                    <option value="">Seleccionar</option>
-                    {sizesOptions.map((option) => (
-                      <option key={option.id} value={option.id}>
-                        {option.name}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
-                    <svg
-                      className="h-4 w-4 text-gray-500"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                {formik.touched.tamañoId && formik.errors.tamañoId && (
-                  <div className="text-red-500 text-sm mt-1 font-medium">
-                    {formik.errors.tamañoId}
-                  </div>
-                )}
-            </div>
 
-            </div>
-          </div>
+    //         {/* Categoría */}
+    //         <div>
+    //           <label
+    //             htmlFor="productCategory"
+    //             className="font-medium text-gray-700 block mb-1"
+    //           >
+    //             Categoría
+    //           </label>
+    //           <div className="relative">
+    //             <select
+    //               id="productCategory"
+    //               value={
+    //                 selectedCategories && selectedCategories.id
+    //                   ? selectedCategories.id
+    //                   : ""
+    //               }
+    //               onChange={handleSelectChangeCategories}
+    //               name="categoriaId"
+    //               className={`appearance-none w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300 ${
+    //                 formik.touched.categoriaId && formik.errors.categoriaId
+    //                   ? "border-red-500"
+    //                   : ""
+    //               }`}
+    //               required
+    //             >
+    //               <option value="">Seleccionar</option>
+    //               {categoriesOptions.map((option) => (
+    //                 <option key={option.id} value={option.id}>
+    //                   {option.name}
+    //                 </option>
+    //               ))}
+    //             </select>
+    //             <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+    //               <svg
+    //                 className="h-4 w-4 text-gray-500"
+    //                 fill="none"
+    //                 stroke="currentColor"
+    //                   viewBox="0 0 24 24"
+    //                   xmlns="http://www.w3.org/2000/svg"
+    //                 >
+    //                   <path
+    //                     strokeLinecap="round"
+    //                     strokeLinejoin="round"
+    //                     strokeWidth="2"
+    //                     d="M9 5l7 7-7 7"
+    //                   />
+    //                 </svg>
+    //               </div>
+    //             </div>
+    //             {formik.touched.categoriaId && formik.errors.categoriaId && (
+    //               <div className="text-red-500 text-sm mt-1 font-medium">
+    //                 {formik.errors.categoriaId}
+    //               </div>
+    //             )}
+    //         </div>
 
-          <div className="flex flex-col items-center md:items-start pt-6 md:pt-8">
-            {/* Imagen */}
-            <div className="w-full max-w-xs md:max-w-sm lg:max-w-md h-64 bg-gray-200 rounded-lg overflow-hidden mb-6 md:mb-0">
-              <label
-                htmlFor="imageUpload"
-                className="cursor-pointer flex items-center justify-center w-full h-full"
-              >
-                {formik.values.imagenPrincipal ? (
-                  <img
-                    src={URL.createObjectURL(formik.values.imagenPrincipal)}
-                    alt="Imagen seleccionada"
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <svg
-                    className="h-20 w-20 text-gray-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="1.5"
-                      d="M10 15v4h4v-4m5-8l2 2m-2-2l-2 2m2-2V3a1 1 0 00-1-1H4a1 1 0 00-1 1v18a1 1 0 001 1h18a1 1 0 001-1V7l-6-6z"
-                    />
-                  </svg>
-                )}
-              </label>
-              <input
-                type="file"
-                id="imageUpload"
-                name="imagenPrincipal"
-                accept="image/*"
-                className="hidden"
-                onChange={(event) => {
-                  formik.setFieldValue(
-                    "imagenPrincipal",
-                    event.currentTarget.files[0]
-                  );
-                }}
-              />
-              {formik.touched.imagenPrincipal &&
-                formik.errors.imagenPrincipal && (
-                  <div className="text-red-500 text-sm mt-1 font-medium">
-                    {formik.errors.imagenPrincipal}
-                  </div>
-                )}
-            </div>
-            {/* Botón de crear */}
-            <button
-              type="submit"
-              className="px-6 mt-3 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
-            >
-              Crear Producto
-            </button>
-          </div>
+    //         {/* Tamaño */}
+    //         <div>
+    //             <label
+    //               htmlFor="productSize"
+    //               className="font-medium text-gray-700 block mb-1"
+    //             >
+    //               Tamaño
+    //             </label>
+    //             <div className="relative">
+    //               <select
+    //                 id="productSize"
+    //                 value={
+    //                   selectedSize && selectedSize.id ? selectedSize.id : ""
+    //                 }
+    //                 onChange={handleSelectChangeSize}
+    //                 name="tamañoId"
+    //                 className={`appearance-none w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300 ${
+    //                   formik.touched.tamañoId && formik.errors.tamañoId
+    //                     ? "border-red-500"
+    //                     : ""
+    //                 }`}
+    //                 required
+    //               >
+    //                 <option value="">Seleccionar</option>
+    //                 {sizesOptions.map((option) => (
+    //                   <option key={option.id} value={option.id}>
+    //                     {option.name}
+    //                   </option>
+    //                 ))}
+    //               </select>
+    //               <div className="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+    //                 <svg
+    //                   className="h-4 w-4 text-gray-500"
+    //                   fill="none"
+    //                   stroke="currentColor"
+    //                   viewBox="0 0 24 24"
+    //                   xmlns="http://www.w3.org/2000/svg"
+    //                 >
+    //                   <path
+    //                     strokeLinecap="round"
+    //                     strokeLinejoin="round"
+    //                     strokeWidth="2"
+    //                     d="M9 5l7 7-7 7"
+    //                   />
+    //                 </svg>
+    //               </div>
+    //             </div>
+    //             {formik.touched.tamañoId && formik.errors.tamañoId && (
+    //               <div className="text-red-500 text-sm mt-1 font-medium">
+    //                 {formik.errors.tamañoId}
+    //               </div>
+    //             )}
+    //         </div>
 
-        </form>
+    //         </div>
+    //       </div>
+
+    //       <div className="flex flex-col items-center md:items-start pt-6 md:pt-8">
+    //         {/* Imagen */}
+    //         <div className="w-full max-w-xs md:max-w-sm lg:max-w-md h-64 bg-gray-200 rounded-lg overflow-hidden mb-6 md:mb-0">
+    //           <label
+    //             htmlFor="imageUpload"
+    //             className="cursor-pointer flex items-center justify-center w-full h-full"
+    //           >
+    //             {formik.values.imagenPrincipal ? (
+    //               <img
+    //                 src={URL.createObjectURL(formik.values.imagenPrincipal)}
+    //                 alt="Imagen seleccionada"
+    //                 className="w-full h-full object-cover"
+    //               />
+    //             ) : (
+    //               <svg
+    //                 className="h-20 w-20 text-gray-500"
+    //                 fill="none"
+    //                 viewBox="0 0 24 24"
+    //               >
+    //                 <path
+    //                   stroke="currentColor"
+    //                   strokeLinecap="round"
+    //                   strokeLinejoin="round"
+    //                   strokeWidth="1.5"
+    //                   d="M10 15v4h4v-4m5-8l2 2m-2-2l-2 2m2-2V3a1 1 0 00-1-1H4a1 1 0 00-1 1v18a1 1 0 001 1h18a1 1 0 001-1V7l-6-6z"
+    //                 />
+    //               </svg>
+    //             )}
+    //           </label>
+    //           <input
+    //             type="file"
+    //             id="imageUpload"
+    //             name="imagenPrincipal"
+    //             accept="image/*"
+    //             className="hidden"
+    //             onChange={(event) => {
+    //               formik.setFieldValue(
+    //                 "imagenPrincipal",
+    //                 event.currentTarget.files[0]
+    //               );
+    //             }}
+    //           />
+    //           {formik.touched.imagenPrincipal &&
+    //             formik.errors.imagenPrincipal && (
+    //               <div className="text-red-500 text-sm mt-1 font-medium">
+    //                 {formik.errors.imagenPrincipal}
+    //               </div>
+    //             )}
+    //         </div>
+    //         {/* Botón de crear */}
+    //         <button
+    //           type="submit"
+    //           className="px-6 mt-3 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50"
+    //         >
+    //           Crear Producto
+    //         </button>
+    //       </div>
+
+    //     </form>
+    //   </div>
+    <div className="flex justify-center items-center h-full">
+        <div className="text-3xl text-gray-500 font-bold">Bajo mantenimiento</div>
       </div>
     );
   };

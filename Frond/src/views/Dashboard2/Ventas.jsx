@@ -3,6 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { ventas } from "../../redux/actions";
 
 const VentasTable = () => {
+  useEffect(
+    () => {
+      dispatch(ventas())
+    },[]
+  );
   const dispatch = useDispatch()
   const [selectedVenta, setSelectedVenta] = useState(null);
   const stateVentas = useSelector(state => state.Allventas);
@@ -37,11 +42,6 @@ const pageNumbers = generatePageNumbers();
     setPageNumber(index);
   };
 
-  useEffect(
-    () => {
-      dispatch(ventas())
-    },[]
-  );
   console.log(stateVentas);
 
   const handleVerClick = (venta, index) => {
@@ -52,10 +52,10 @@ const pageNumbers = generatePageNumbers();
       setSelectedVenta(null);
   };
 
- 
+ console.log(currentSales)
   return (
     <>
-      {currentSales?.length > 1 ?
+      {currentSales?.length > 0 ?
        (<table className="w-full rounded-lg overflow-hidden">
        <thead className="bg-gray-100 uppercase text-sm leading-normal">
          <tr className="text-gray-600">
@@ -69,7 +69,7 @@ const pageNumbers = generatePageNumbers();
        </thead>
        <tbody className="text-gray-600 text-sm font-light">
      
-         {currentSales.length > 0 ? currentSales?.map((venta, index) => (
+         {currentSales?.length > 0 ? currentSales?.map((venta, index) => (
            <tr key={venta.cliente + venta.fecha} className="border-t">
              <td className="px-6 text-center py-10">#00{index}</td>
              <td className="px-6 text-center py-10">{venta.clienteName}</td>
@@ -87,55 +87,59 @@ const pageNumbers = generatePageNumbers();
              </td>
            </tr>
          ))
-         : (
-          <div className="flex justify-center items-center h-full">
-            <div className="text-3xl text-gray-500 font-bold">No hay ventas aun...</div>
-          </div>
-        )
+         : ''
          }
        </tbody>
      </table>
      
      )
-        : ''
+        :  <div className="flex justify-center items-center h-full">
+        <div className="text-3xl text-gray-500 font-bold">No hay ventas aun...</div>
+      </div>
       }
 
-<div className="flex justify-center py-8">
-            <button
-              onClick={() => {
-                if (currentPage > 1) {
-                  setCurrentPage(currentPage - 1);
-                  setSelectedPage(selectedPage - 1);
-                }
-              }}
-              className="mx-1 text-2xl font-bold px-3 py-1 rounded bg-white text-black  focus:outline-none"
+      {stateVentas.length > 5 && (
+    <div className="flex justify-center py-8">
+    <button
+      onClick={() => {
+        if (currentPage > 1) {
+          setCurrentPage(currentPage - 1);
+          setSelectedPage(selectedPage - 1);
+        }
+      }}
+      className="border-solid rounded border border-[255 255 255] px-3 py-1 mx-1 text-lg font-semibold text-slate-400 focus:text-slate-950 focus:border-slate-950 "
+      >
+      {"<"}
+    </button>
+    {pageNumbers.map(({ number, selected }) => (
+      <button
+        key={number}
+        onClick={() => {
+          setCurrentPage(number);
+          setSelectedPage(number);
+        }}
+        className={`border-solid rounded border border-[255 255 255] px-3 py-1 mx-1 text-lg font-semibold text-slate-400 focus:text-slate-950 focus:border-slate-950 ${
+          selected ? "bg-blue-900 text-white" : ""
+            }`}
             >
-              {"<"}
-            </button>
-            {pageNumbers.map(({ number, selected }) => (
-              <button
-                key={number}
-                onClick={() => {
-                  setCurrentPage(number);
-                  setSelectedPage(number);
-                }}
-                className={`mx-1 text-lg font-bold px-3 py-1 rounded ${selected ? 'bg-black text-white' : 'bg-white text-black '}`}
-              >
-                {number}
-              </button>
-            ))}
-            <button
-              onClick={() => {
-                if (currentPage < Math.ceil(stateVentas?.length / itemsPerPage)) {
-                  setCurrentPage(currentPage + 1);
-                  setSelectedPage(selectedPage + 1);
-                }
-              }}
-              className="mx-1 text-2xl font-bold px-3 py-1 rounded bg-white text-gray-500 focus:outline-none"
-            >
-              {">"}
-            </button>
-          </div>
+        {number}
+      </button>
+    ))}
+    <button
+      onClick={() => {
+        if (currentPage < Math.ceil(stateVentas?.length / itemsPerPage)) {
+          setCurrentPage(currentPage + 1);
+          setSelectedPage(selectedPage + 1);
+        }
+      }}
+      className="border-solid rounded border border-[255 255 255] px-3 py-1 mx-1 text-lg font-semibold text-slate-400 focus:text-slate-950 focus:border-slate-950"
+      >
+      {">"}
+    </button>
+</div>
+      )}
+
+
       {selectedVenta && (
         <div className="fixed z-50 inset-0 overflow-y-auto">
           <div className="flex items-center justify-center min-h-screen px-4" onMouseDown={handleCloseModal}>

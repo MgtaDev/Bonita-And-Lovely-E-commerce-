@@ -49,38 +49,7 @@ const Detail = () => {
     ]
   }
 
-  const handleProceedToPayment = async () => {
-    if (!isAuthenticated) {
-      Swal.fire("Debes iniciar sesión para continuar", "", "error");
-      return;
-    }
-    if (
-      !currentUser.name ||
-      !currentUser.correo_electronico ||
-      !currentUser.telefono ||
-      !currentUser.direccion
-    ) {
-      setShow(true);
-      return;
-    }
-    if (stateProducts.cantidad <= 0) {
-      setShow(true);
-      return;
-    }
-    
-    try {
-      await axios.put(`carrito/${idNumber}`, productToAdd);
-     
-      const response = await axios.post("http://localhost:3001/pago", productToPay);
-      window.location.href = response.data.response.body.init_point;
-      
-      if(response){
-        axios.put(`http://localhost:3001/carrito/pagado/${idNumber}`, { pagado: true });
-      } 
-    } catch (error) {
-      console.log(error);
-    }
-  };
+ 
 
   useEffect(() => {
     dispatch(getProductsByDetail(id));

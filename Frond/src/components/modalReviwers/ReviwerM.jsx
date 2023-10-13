@@ -4,12 +4,12 @@ import StarRatings from 'react-star-ratings';
 import Swal from "sweetalert2";
 import { FaThumbsUp } from 'react-icons/fa';
 
-export default function Modal({ productId , currentUserId}) {
+export default function Modal({ productoId , clienteId}) {
     const [showModal, setShowModal] = React.useState(false);
     const [startCount, SetStartCount] = React.useState(0)
     const [comentario, setComentario] = React.useState("");
 
-    console.log(productId);
+    console.log(productoId);
 
     const onchangeStart = (rating) => {
         SetStartCount(rating)
@@ -21,8 +21,8 @@ export default function Modal({ productId , currentUserId}) {
     const handleSaveChanges = async () => {
         try {
             const response = await axios.post(`/reviewr`, {
-                currentUserId,
-                productId,
+                clienteId,
+                productoId,
                 rating: startCount,
                 comentario
             });
@@ -34,8 +34,8 @@ export default function Modal({ productId , currentUserId}) {
         }
     }
 
-    console.log( currentUserId,
-        productId,
+    console.log( clienteId,
+        productoId,
         startCount,
         comentario)
 
