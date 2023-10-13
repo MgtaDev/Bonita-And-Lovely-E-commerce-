@@ -274,7 +274,8 @@ const pageNumbers = generatePageNumbers();
               onClick={() => {
                 if (currentPage > 1) {
                   setCurrentPage(currentPage - 1);
-                  setSelectedPage(selectedPage - 1);
+                  setSelectedPage(selectedPage - 1)
+                  redirigirAlInicio();
                 }
               }}
               className="mx-1 text-2xl font-bold px-3 py-1 rounded bg-white text-black  focus:outline-none"
@@ -286,7 +287,8 @@ const pageNumbers = generatePageNumbers();
                 key={number}
                 onClick={() => {
                   setCurrentPage(number);
-                  setSelectedPage(number);
+                  setSelectedPage(number)
+                  redirigirAlInicio();
                 }}
                 className={`mx-1 text-lg font-bold px-3 py-1 rounded ${selected ? 'bg-black text-white' : 'bg-white text-black '}`}
               >
@@ -297,7 +299,8 @@ const pageNumbers = generatePageNumbers();
               onClick={() => {
                 if (currentPage < Math.ceil(stateClients?.length / itemsPerPage)) {
                   setCurrentPage(currentPage + 1);
-                  setSelectedPage(selectedPage + 1);
+                  setSelectedPage(selectedPage + 1)
+                  redirigirAlInicio();
                 }
               }}
               className="mx-1 text-2xl font-bold px-3 py-1 rounded bg-white text-gray-500 focus:outline-none"

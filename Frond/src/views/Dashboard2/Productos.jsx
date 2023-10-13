@@ -18,6 +18,9 @@ const ProductosTable = () => {
   const [disableNext, setDisableNext] = useState(false);
   console.log(stateProducts)
 
+  const redirigirAlInicio = () => {
+    window.scrollTo(0, 0);
+  }
   const handlerPageNumber = (index) => {
     setPageNumberNx(index);
   };
@@ -40,6 +43,7 @@ const ProductosTable = () => {
   );
 
   const handlePageClick = (newPageNumber) => {
+    redirigirAlInicio()
     // Limitar la navegación entre las páginas 1 y 3
     if (newPageNumber < 0) {
       newPageNumber = 0;
@@ -393,7 +397,9 @@ const ProductosTable = () => {
       <div className="flex justify-center py-10">
             <button
               disabled={disablePrev || stateProducts.loading}
-              onClick={() => handlePageClick(pageNumber - 1)}
+              onClick={() => handlePageClick(pageNumber - 1)
+              
+            }
               className="mx-1 text-3xl"
             >
               {"<"}

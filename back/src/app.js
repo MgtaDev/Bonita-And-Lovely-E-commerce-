@@ -89,37 +89,37 @@ server.post("/pagoCarrito", (req, res) => {
     });
 });
 
-server.post("/pago", (req, res) => {
-  const producto = req.body;
+// server.post("/pago", (req, res) => {
+//   const producto = req.body;
 
-  let preference = {
-    items: [
-      {
-        id: producto.id,
-        title: producto.nombre,
-        unit_price: Number(producto.precio),
-        description: producto.descripcion,
-        quantity: producto.quantity
-      },
-    ],
-    back_urls: {
-      success: "https://bonita-and-lovely-e-commerce.vercel.app/confirmedpayment",
-      failure: "",
-      pending: "",
-    },
-    auto_return: "approved",
-    binary_mode:true,
-  };
+//   let preference = {
+//     items: [
+//       {
+//         id: producto.id,
+//         title: producto.nombre,
+//         unit_price: Number(producto.precio),
+//         description: producto.descripcion,
+//         quantity: producto.quantity
+//       },
+//     ],
+//     back_urls: {
+//       success: "https://bonita-and-lovely-e-commerce.vercel.app/confirmedpayment",
+//       failure: "",
+//       pending: "",
+//     },
+//     auto_return: "approved",
+//     binary_mode:true,
+//   };
 
-  mercadopago.preferences
-    .create(preference)
-    .then((response)=> {
-   res.status(200).send({response})
-    })
-    .catch((error)=> {
-      res.status(400).send(error.message)
-    });
-});
+//   mercadopago.preferences
+//     .create(preference)
+//     .then((response)=> {
+//    res.status(200).send({response})
+//     })
+//     .catch((error)=> {
+//       res.status(400).send(error.message)
+//     });
+// });
 
 
 module.exports = server;
