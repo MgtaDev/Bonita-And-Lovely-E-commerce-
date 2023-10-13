@@ -81,9 +81,9 @@ const PagoExitoso = () => {
 
 
   const handleButtonClick = () => {
-    const serviceId = 'service_1g3c0si'
-    const templateId = 'template_hj87mjd'
-    const publicKey = 'kXx0ph3VN7L3t7N6a'
+    const serviceId = 'service_godu74d'
+    const templateId = 'template_k0b7cok'
+    const publicKey = '8DHwYtQ453I0S7l8B'
 
     const currentDate = new Date(); // Obtén la fecha y hora actual
     const formattedDate = `${currentDate.toLocaleDateString()} a las ${currentDate.toLocaleTimeString()}`; // Formatea la fecha y hora en una cadena legible para el usuario
