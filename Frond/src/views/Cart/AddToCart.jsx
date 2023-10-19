@@ -72,9 +72,7 @@ const AddToCart = () => {
           <MoreProductsCardContainer />
         </div>
 
-        <div className='flex flex-row gap-2 m-10 rounded-lg p-10 shadow-2xl justify-center items-center'>
-          <OtherMoreProductsContainer/>
-        </div>
+       
       </div>
     </div>
   );

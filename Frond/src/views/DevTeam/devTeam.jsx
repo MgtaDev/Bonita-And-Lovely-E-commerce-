@@ -7,6 +7,7 @@ import code from './assets/Code.png'
 import Dani from './assets/DaniDev.jpeg'
 import Iveth from './assets/IvethDev.jpeg'
 import Nahuel from './assets/NahuelDev.png'
+import Nat from './assets/NatDev.jpeg'
 import Esteban from './assets/EstebanDev.png'
 
 
@@ -155,6 +156,37 @@ const Reviews = () => {
         
 
     {/* Iveth */}
+
+   {/* Nat
+   <Card>
+
+<ButtonsDiv>
+<PinkButton>
+<Code src={code} alt='icon'></Code>
+</PinkButton>
+
+    <SocialsDiv>
+<Link target='_blank' href='https://github.com/natisalvarez'>
+<Github src={GithubLogo}></Github>
+</Link>
+
+<Link target='_blank' href='https://www.linkedin.com/in/iveth-gonzalez-98799895/'>
+<Linkedin src={LinkedinLogo}></Linkedin>
+</Link>
+
+<Link target='_blank' href='https://www.linkedin.com/in/iveth-gonzalez-98799895/'>
+<Gmail src={GmailLogo}></Gmail>
+</Link>
+</SocialsDiv>
+</ButtonsDiv>
+<DevImg src={Nat} alt='Paul-img'></DevImg>
+     
+      <DevContainer>
+          <AvatarImage src={imageLink} alt="user avatar" />
+          <CardTitle>Natalia Alvarez</CardTitle>
+      </DevContainer>
+</Card> */}
+
     <Card>
 
 <ButtonsDiv>
