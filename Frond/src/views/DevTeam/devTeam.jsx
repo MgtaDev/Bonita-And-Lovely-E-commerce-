@@ -155,9 +155,9 @@ const Reviews = () => {
     <ContainerTeam>
         
 
-    {/* Iveth */}
 
-   {/* Nat
+
+    {/* Nat */}
    <Card>
 
 <ButtonsDiv>
@@ -185,8 +185,9 @@ const Reviews = () => {
           <AvatarImage src={imageLink} alt="user avatar" />
           <CardTitle>Natalia Alvarez</CardTitle>
       </DevContainer>
-</Card> */}
+</Card> 
 
+{/* iveth */}
     <Card>
 
 <ButtonsDiv>
